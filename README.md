@@ -2,7 +2,7 @@
 
 A orm database Flutter plugin. 
 
-之前发了一篇文章[《手把手教你在Flutter项目优雅的使用ORM数据库》](https://juejin.im/post/5c45c72d6fb9a049d81c2b4c)，很多人咨询使用也提了一些宝贵的意见，说不希望要写lua，这样不够优雅，也增加了学习成本。细想了一下，确实是，对flutter项目开发来讲，最好就是纯flutter版的orm框架，于是我就写了一个flutter版的 [orm插件flutter\_orm\_plugin](https://pub.dartlang.org/packages/flutter_orm_plugin) ，使用的demo我放到github上了，大家可以下载来玩玩。下面我介绍一下flutter\_orm_plugin提供的所有api。
+之前发了一篇文章[《手把手教你在Flutter项目优雅的使用ORM数据库》](https://juejin.im/post/5c45c72d6fb9a049d81c2b4c)，很多人咨询使用也提了一些宝贵的意见，说不希望要写lua，这样不够优雅，也增加了学习成本。细想了一下，确实是，对flutter项目开发来讲，最好就是纯flutter版的orm框架，于是我就写了一个flutter版的 [orm插件flutter\_orm\_plugin](https://pub.dartlang.org/packages/flutter_orm_plugin) ，使用的[demo](https://github.com/williamwen1986/flutter_orm_demo)我放到github上了，大家可以下载来玩玩。下面我介绍一下flutter\_orm_plugin提供的所有api。
 
 ## 添加orm表
 
@@ -17,7 +17,7 @@ flutter\_orm_plugin中一个orm对应一个表，例如demo中Student表，它�
 
 **score** 在数据库中是Real类型
 
-创建这样的表的代码在demo的main.dart中
+创建这样的表的代码在demo的[main.dart](https://github.com/williamwen1986/flutter_orm_demo/blob/master/lib/main.dart)中
 
 ```
 	Map<String , Field> fields = new Map<String , Field>();
