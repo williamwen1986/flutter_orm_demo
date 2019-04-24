@@ -41,7 +41,13 @@ class _JoinOrderByDemoState extends State<JoinOrderByDemo>
       Map m = {"name": name, "class": className, "score": score};
       orms.add(m);
     }
-    FlutterOrmPlugin.batchSaveOrms("Student", orms);
+    FlutterOrmPlugin.batchSaveOrms("Student", orms).then((_){
+      Query("Student").all().then((List l) {
+        setState(() {
+          userList = l;
+        });
+      });
+    });
 
     Query("Match").delete();
     Query("Class").delete();
@@ -56,21 +62,13 @@ class _JoinOrderByDemoState extends State<JoinOrderByDemo>
       Map m = {"className": className, "teacher": name};
       classes.add(m);
     }
-    FlutterOrmPlugin.batchSaveOrms("Class", classes);
-
-    Query("Student").all().then((List l) {
-      setState(() {
-        userList = l;
+    FlutterOrmPlugin.batchSaveOrms("Class", classes).then((_){
+      Query("Class").all().then((List l) {
+        setState(() {
+          classList = l;
+        });
       });
     });
-
-    Query("Class").all().then((List l) {
-      setState(() {
-        classList = l;
-      });
-    });
-
-
   }
 
   @override

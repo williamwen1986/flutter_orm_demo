@@ -41,7 +41,13 @@ class _JoinPortionColumnsDemoState extends State<JoinPortionColumnsDemo>
       Map m = {"name": name, "class": className, "score": score};
       orms.add(m);
     }
-    FlutterOrmPlugin.batchSaveOrms("Student", orms);
+    FlutterOrmPlugin.batchSaveOrms("Student", orms).then((_){
+      Query("Student").all().then((List l) {
+        setState(() {
+          userList = l;
+        });
+      });
+    });
 
     Query("Match").delete();
     List matchs = new List();
@@ -53,17 +59,11 @@ class _JoinPortionColumnsDemoState extends State<JoinPortionColumnsDemo>
       Map m = {"matchName": name, "winnerId": i + 2};
       matchs.add(m);
     }
-    FlutterOrmPlugin.batchSaveOrms("Match", matchs);
-
-    Query("Student").all().then((List l) {
-      setState(() {
-        userList = l;
-      });
-    });
-
-    Query("Match").all().then((List l) {
-      setState(() {
-        matchList = l;
+    FlutterOrmPlugin.batchSaveOrms("Match", matchs).then((_){
+      Query("Match").all().then((List l) {
+        setState(() {
+          matchList = l;
+        });
       });
     });
   }

@@ -27,16 +27,18 @@ class _DeleteSqlDemoState extends State<DeleteSqlDemo>{
       Map m = {"name":name, "class":className, "score":score};
       orms.add(m);
     }
-    FlutterOrmPlugin.batchSaveOrms("Student", orms);
-    Query("Student").whereByColumFilters([WhereCondiction("studentId", WhereCondictionType.EQ_OR_LESS_THEN, 5)]).all().then((List l) {
-      setState(() {
-        if(l != null) {
-          userList = l;
-        } else {
-          userList = [];
-        }
+    FlutterOrmPlugin.batchSaveOrms("Student", orms).then((_){
+      Query("Student").whereByColumFilters([WhereCondiction("studentId", WhereCondictionType.EQ_OR_LESS_THEN, 5)]).all().then((List l) {
+        setState(() {
+          if(l != null) {
+            userList = l;
+          } else {
+            userList = [];
+          }
+        });
       });
     });
+
   }
 
   @override

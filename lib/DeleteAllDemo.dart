@@ -27,13 +27,13 @@ class _DeleteAllDemoState extends State<DeleteAllDemo>{
       Map m = {"name":name, "class":className, "score":score};
       orms.add(m);
     }
-    FlutterOrmPlugin.batchSaveOrms("Student", orms);
-    Query("Student").all().then((List l) {
-      setState(() {
-        userList = l;
+    FlutterOrmPlugin.batchSaveOrms("Student", orms).then((_){
+      Query("Student").all().then((List l) {
+        setState(() {
+          userList = l;
+        });
       });
     });
-
   }
 
   @override
