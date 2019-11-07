@@ -302,7 +302,7 @@ order by 联表查询
 flutter\_orm\_plugin 已经发布到flutter 插件仓库。只要简单配置即可使用，在yaml文件中加上flutter\_orm\_plugin依赖以及orm框架所需要的lua源文件，flutter\_orm\_plugin会对所有lua代码进行封装，最终使用只需要关心dart接口，对lua是无感的。
 
 ```
-  flutter_orm_plugin: ^1.0.1
+  flutter_orm_plugin: ^0.3.1
   
   .
   .
@@ -337,7 +337,7 @@ source 'https://github.com/williamwen1986/curl.git'
 .
 
 pod 'curl', '~> 1.0.0'
-pod 'LuakitPod', '~> 1.0.17'
+pod 'LuakitPod/dynamic', '~> 1.0.28'
 
 ```
 
@@ -354,7 +354,7 @@ repositories {
 .
 .
 
-implementation 'com.github.williamwen1986:LuakitJitpack:1.0.9'
+implementation 'com.github.williamwen1986:LuakitJitpack:1.0.14'
 
 ```
 

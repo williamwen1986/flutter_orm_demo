@@ -38,18 +38,18 @@ class _MyAppState extends State<MyApp> {
     FlutterOrmPlugin.createTable("School","Class",classFields);
     FlutterOrmPlugin.createTable("School","Student",fields);
 
-    Map<String , dynamic> user = new Map<String , dynamic>();
-    user["studentId"] = 1;
-    user["name"] = "tom";
-    user["class"] = "class1";
-    user["score"] = 1;
-    FlutterOrmPlugin.saveOrm("Student", user);
-
-    Query("Student").whereByColumFilters([
-      WhereCondiction("score", WhereCondictionType.IN, [1])
-    ]).delete().then((_){
-      int a = 0;
-    });
+//    Map<String , dynamic> user = new Map<String , dynamic>();
+//    user["studentId"] = 1;
+//    user["name"] = "tom";
+//    user["class"] = "class1";
+//    user["score"] = 1;
+//    FlutterOrmPlugin.saveOrm("Student", user);
+//
+//    Query("Student").whereByColumFilters([
+//      WhereCondiction("score", WhereCondictionType.IN, [1])
+//    ]).delete().then((_){
+//      int a = 0;
+//    });
 
   }
 

@@ -27,7 +27,7 @@ class _JoinByWhereDemoState extends State<JoinByWhereDemo>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 3);
+    _tabController = new TabController(vsync: this, length: 2);
 
     Query("Student").delete();
     List orms = new List();

@@ -27,7 +27,7 @@ class _JoinByGroupDemoState extends State<JoinByGroupDemo>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 3);
+    _tabController = new TabController(vsync: this, length: 2);
 
     Query("Student").delete();
     List orms = new List();
@@ -49,6 +49,7 @@ class _JoinByGroupDemoState extends State<JoinByGroupDemo>
       });
     });
 
+    print("111");
     Query("Match").delete();
     Query("Class").delete();
 
